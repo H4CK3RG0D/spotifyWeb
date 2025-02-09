@@ -84,7 +84,6 @@ const artistIds = [
 ```
 
 For example: **The Weeknd**: [`https://open.spotify.com/artist/`**`1Xyo4u8uXC1ZmMpatF05PJ`**](https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ)
-, which
 
 ## `/random-songs` Genre
 
@@ -101,4 +100,4 @@ const genres = ['pop', 'rock', 'hip-hop', 'electronic', 'classical', 'jazz', 'ma
 
 ---
 
-Made with <3 by Bryan 
+~{ Made with ❤️ by Bryan }~
