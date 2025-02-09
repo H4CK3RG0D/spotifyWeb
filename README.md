@@ -2,7 +2,7 @@
 
 A web-based application for interacting with Spotify's API.
 
-# Installation and Setting up
+# Installation and Set Up
 
 ## Node.js
 
@@ -28,26 +28,26 @@ Start the development server:
 npm run start
 ```
 
-## Adding Spotify Client API and ID
+## Adding Spotify Client Secret, Client ID and Redirect URI
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
 2. Log in and create a new application.
 3. Copy the Client ID and Client Secret from the application settings.
+4. Under **Redirect URIs**, add the following URI: `http://localhost:8181/api/callback`
 
-Create a .env file in the root of your project and add the following:
+6. Create a `.env` file in the root of your project and add the following:
 
 ```
 SPOTIFY_CLIENT_ID=your-client-id
 SPOTIFY_CLIENT_SECRET=your-client-secret
-REDIRECT_URI=your-redirect-uri
+REDIRECT_URI=http://localhost:8181/api/callback
 ```
 
 Save the file and restart your server if necessary.
 
-## Required Steps
+### Create `liked-songs.json` file
 
-1. Run the server: `npm run test`.
-2. Run `http://localhost:{port}/save-liked-songs` to create the `liked-songs.json` into the main directory
+1. Run `http://localhost:8181/save-liked-songs` to create the `liked-songs.json` into the main directory
 
 
 # Endpoints

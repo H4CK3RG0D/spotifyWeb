@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon src/index.js",
-    "v1": "node src/working.js"
+    "v1": "node src/dev/v1.js"
   },
   "author": "me",
   "license": "MIT",
