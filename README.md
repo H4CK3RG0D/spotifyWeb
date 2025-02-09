@@ -8,7 +8,7 @@ A web-based application for interacting with Spotify's API.
 
 Ensure you have [Node.js](https://nodejs.org/en) installed.
 
-Clone the repository:
+Download or Clone the repository:
 
 ```cmd
 git clone https://github.com/H4CK3RG0D/spotifyWeb.git
@@ -17,6 +17,7 @@ cd spotifyWeb
 
 ## Install dependencies:
 
+Installs all packages:
 ```cmd
 npm install
 ```
@@ -71,7 +72,7 @@ To change the popularity range, update the filtering condition in the code snipp
 
 ## `/crp` Artist List
 
-To change the artist list, simply add an artist's ID inside the array `artistIds`, which can be obtained by copying the artist's link through spotify url.
+To change the artist list, simply add an artist's ID inside the `artistIds` array, which can be obtained by copying the artist's link through spotify url.
 
 ```js
 const artistIds = [
@@ -84,7 +85,13 @@ const artistIds = [
 
 For example: **The Weeknd**: `https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ`, which
 
+## `/random-songs` Genre
 
+You can customize the genre selection for randomly played songs by modifying the `genres` array. Simply update or extend the list to include your preferred genres. A full list of supported 1383 genres can be found [here](https://gist.githubusercontent.com/andytlr/4104c667a62d8145aa3a/raw/2d044152bcacf98d401b71df2cb67fade8e490c9/spotify-genres.md).
+
+```js
+const genres = ['pop', 'rock', 'hip-hop', 'electronic', 'classical', 'jazz', 'mandopop', 'rap', 'metal', 'blues'];
+```
 
 # Future Ideas!!!
 
