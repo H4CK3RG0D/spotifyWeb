@@ -1,5 +1,4 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 const MONTH_NAMES = [
@@ -10,6 +9,8 @@ const MONTH_NAMES = [
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 router.get('/cmp', async (req, res) => {
+    const spotifyApi = req.spotifyApi;
+    
     try {
         const likedSongsData = JSON.parse(fs.readFileSync('liked-songs.json', 'utf8'));
         const likedSongsArray = likedSongsData.likedSongs;
@@ -46,3 +47,21 @@ router.get('/cmp', async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+ 
+    // const monthlyThemes = {
+    //     January: { energy: [0.4, 0.6], valence: [0.4, 0.6] }, // Medium Energy (balanced mood)
+    //     February: { energy: [0.2, 0.4], valence: [0.3, 0.5] }, // Love/slow tempo; ballads
+    //     March: { energy: [0.3, 0.5], valence: [0.4, 0.7] }, // Relaxed
+    //     April: { energy: [0.2, 0.4], valence: [0.2, 0.5] }, // Love/Heartbreak
+    //     May: { energy: [0.7, 1.0], valence: [0.5, 0.8] }, // Fast Tempo/High Energy
+    //     June: { energy: [0.4, 0.6], valence: [0.5, 0.7] }, // Nostalgic
+    //     July: { energy: [0.5, 0.7], valence: [0.6, 0.8] }, // Hopeful
+    //     August: { energy: [0.2, 0.4], valence: [0.1, 0.4] }, // Sad
+    //     September: { energy: [0.3, 0.5], valence: [0.2, 0.5] }, // Moody
+    //     October: { energy: [0.4, 0.6], valence: [0.4, 0.6] }, // Medium Energy (balanced mood)
+    //     November: { energy: [0.3, 0.5], valence: [0.2, 0.5] }, // Dark/Joyful
+    //     December: { energy: [0.4, 0.7], valence: [0.5, 0.8] }, // Christmas/Cheerful
+    // };

@@ -1,8 +1,8 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 router.get('/random-song', (req, res) => {
+    const spotifyApi = req.spotifyApi;
     // Define a list of genres to search randomly
     const genres = ['pop', 'rock', 'hip-hop', 'electronic', 'classical', 'jazz', 'mandopop', 'rap', 'metal', 'blues'];
     
@@ -40,4 +40,4 @@ router.get('/random-song', (req, res) => {
         });
 });
 
-module.export = router;
+module.exports = router;

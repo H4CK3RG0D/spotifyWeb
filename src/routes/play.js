@@ -1,19 +1,31 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
+const path = require('path'); 
 const router = express.Router();
 
-router.get('/play', (req, res) => {
-    const { uri } = req.query;
+router.get('/play', async (req, res) => {
+    try {
+        const spotifyApi = req.spotifyApi; 
+        if (!spotifyApi) {
+            return res.status(500).json({ error: 'Spotify API is not initialized' });
+        }
 
-    spotifyApi.play({ uris: [uri] })
-        .then(() => {
-            // Send success message or redirect to the play page
-            res.sendFile(path.join(process.cwd(), 'views', 'search.html'));
-        })
-        .catch(error => {
-            console.error('Error playing:', error);
-            res.send(`Error playing: ${error}`);
-        });
+        const { uri } = req.query;
+        if (!uri) {
+            return res.status(400).json({ error: 'No URI provided' });
+        }
+        const devicesResponse = await spotifyApi.getMyDevices();
+        const activeDevice = devicesResponse.body.devices.find(device => device.is_active);
+
+        if (!activeDevice) {
+            return res.status(400).json({ error: 'No active Spotify device found. Please open Spotify and try again.' });
+        }
+        await spotifyApi.play({ uris: [uri], device_id: activeDevice.id });
+
+        res.sendFile(path.join(process.cwd(), 'views', 'index.html')); 
+    } catch (error) {
+        console.error('❌ Error playing track:', error);
+        res.status(500).json({ error: 'Failed to play track.', details: error.message });
+    }
 });
 
 module.exports = router;

@@ -1,8 +1,8 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 router.get('/test', async (req, res) => {
+    const spotifyApi = req.spotifyApi;
     try{
         const trackIds = ['11dFghVXANMlKmJXsNCbNl', '3n3Ppam7vgaVa1iaRUc9Lp'];
     spotifyApi.getAudioFeaturesForTracks(trackIds)

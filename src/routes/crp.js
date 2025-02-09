@@ -1,8 +1,8 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 router.get('/crp', async (req, res) => {
+    const spotifyApi = req.spotifyApi;
         try {
             const artistIds = [
                 '3TVXtAsR1Inumwj472S9r4', // Drake

@@ -8,12 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oT/I/GRc94B9PbtlgOcVgF2+X74Ix5/balSjG7W5ovJybPbbvFdQj2PiBmL2gXzy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./styles.css"> <!-- Assuming you have a styles.css in the public folder -->
+    <link rel="stylesheet" href="../public/styles/styles.css"> <!-- Assuming you have a styles.css in the public folder -->
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="/login">Home</a></li>
+            <li><a href="/api/login">Home</a></li>
         </ul>
     </nav>
 
@@ -40,7 +40,7 @@
         });
 
         document.getElementById('random-song-btn').addEventListener('click', () => {
-            fetch('/random-song')
+            fetch('/api/random-song')
                 .then(response => response.json())
                 .then(data => {
                     if (data.message) {

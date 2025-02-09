@@ -1,8 +1,8 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 router.get('/get-user-stats', async (req, res) => {
+    const spotifyApi = req.spotifyApi;
     try {
         // Initialize variables
         let totalListeningTimeMs = 0;
@@ -72,4 +72,4 @@ router.get('/get-user-stats', async (req, res) => {
     }
 });
 
-module.export = router;
+module.exports = router;

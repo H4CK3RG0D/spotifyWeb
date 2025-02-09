@@ -1,8 +1,8 @@
 const express = require('express');
-const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 router.get('/liked-songs', async (req, res) => {
+    const spotifyApi = req.spotifyApi;
     try {
         let offset = 0;
         const limit = 50; // Spotify's max limit per request
