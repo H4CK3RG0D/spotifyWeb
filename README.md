@@ -1,7 +1,17 @@
-# spotifyWeb
+# Spotify Web API – Developer Overview 
 
-A web-based application for interacting with Spotify's API.
+The Spotify Web API allows developers to integrate Spotify’s powerful music data and playback capabilities into their applications. It provides access to Spotify’s catalog, user playlists, recommendations, track metadata, and player controls via RESTful endpoints.
 
+--- 
+# Key Features
+- Retrieve Music Data – Get details about songs, albums, artists, and genres.
+- User Authentication – Authenticate users via OAuth 2.0 to access personal Spotify data.
+- Control Playback – Play, pause, skip, and modify playback on a user’s active device.
+- Personalized Recommendations – Generate song recommendations based on listening history.
+- Manage Playlists – Create, edit, and delete playlists programmatically.
+- Track User Data – Access recently played tracks, top artists, and top tracks.
+
+---
 # Installation and Set Up
 
 ## Node.js
@@ -49,16 +59,6 @@ Save the file and restart your server if necessary.
 
 1. Run `http://localhost:8181/save-liked-songs` to create the `liked-songs.json` into the main directory
 
-
-# Endpoints
-
-1. `/liked-songs`: Display users' all liked songs in a `.json` format
-2. `/save-liked-songs`: Imports users all liked songs into a `.json` file with song properties
-3. `/crp`: Creates a "rap" playlist based on the artist listed
-4. `/cmp`: Creates a monthly playlist based popularity score of `55+`
-5. `/play?uri={track-uri}`: Plays a song based on inputted song uri
-6. `/random-song`: Plays a random song
-
 # Configuration
 
 ##  `/cmp` Popularity Range
@@ -92,6 +92,21 @@ You can customize the genre selection for randomly played songs by modifying the
 ```js
 const genres = ['pop', 'rock', 'hip-hop', 'electronic', 'classical', 'jazz', 'mandopop', 'rap', 'metal', 'blues'];
 ```
+
+---
+
+
+
+# Endpoints
+
+1. `/liked-songs`: Display users' all liked songs in a `.json` format
+2. `/save-liked-songs`: Imports users all liked songs into a `.json` file with song properties
+3. `/crp`: Creates a "rap" playlist based on the artist listed
+4. `/cmp`: Creates a monthly playlist based popularity score of `55+`
+5. `/play?uri={track-uri}`: Plays a song based on inputted song uri
+6. `/random-song`: Plays a random song
+
+---
 
 # Future Ideas!!!
 

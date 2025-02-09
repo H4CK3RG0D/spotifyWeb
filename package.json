@@ -4,7 +4,7 @@
   "description": "express server",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon src/index.js",
+    "start": "nodemon src/index.js",
     "v1": "node src/dev/v1.js"
   },
   "author": "me",
