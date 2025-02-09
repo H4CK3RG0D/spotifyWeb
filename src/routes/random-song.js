@@ -1,5 +1,5 @@
 const express = require('express');
-const SpotifyWebApi = require('spotify-web-api-node');
+const spotifyApi = req.app.locals.spotifyApi;
 const router = express.Router();
 
 router.get('/random-song', (req, res) => {
