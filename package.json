@@ -4,14 +4,13 @@
   "description": "express server",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js",
-    "v1": "node working.js"
+    "test": "nodemon src/index.js",
+    "v1": "node src/working.js"
   },
   "author": "me",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "ejs": "^3.1.10",
     "express": "^4.21.1",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.7",
