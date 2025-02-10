@@ -24,6 +24,10 @@ async function authenticateSpotify() {
     }
 }
 
+app.get('/', (req, res) => {
+    res.redirect('/api/');
+});
+
 authenticateSpotify();
 app.locals.spotifyApi = spotifyApi; 
 

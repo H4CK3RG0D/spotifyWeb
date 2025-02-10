@@ -66,7 +66,7 @@
                             resultDiv.innerHTML = `
                                 <h2>${data.name || 'Unknown'} by ${data.artists?.[0]?.name || 'Unknown Artist'}</h2>
                                 <img src="${data.album?.images?.[0]?.url || 'placeholder.png'}" alt="${data.name}" class="img-fluid rounded">
-                                <a href="/play?uri=${data.uri}" class="btn btn-primary mt-3">Play</a>
+                                <a href="/api/play?uri=${data.uri}" class="btn btn-primary mt-3">Play</a>
                             `;
                         }
                     })
