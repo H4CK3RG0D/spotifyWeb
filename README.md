@@ -40,22 +40,6 @@ Start the development server:
 npm run start
 ```
 
-# Glitch Setup
-
-This section explains how to set up using Glitch.com
-
-## Creating Project
-1. Go to [Glitch](https://glitch.com). Login.
-2. Click **New Project** and select **Import from GitHub**
-3. Paste the repository URL `H4CK3RG0D/spotifyWeb` and import the project.
-
-Once the project is imported, run to install all dependencies:
-```sh
-npm install
-```
-
----
-
 ## Adding Spotify Client Secret, Client ID and Redirect URI
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
@@ -75,9 +59,49 @@ REDIRECT_URI=http://localhost:8181/api/callback
 
 Save the file and restart your server if necessary.
 
-### Create `liked-songs.json` file
+---
 
-1. Run `http://localhost:8181/api/save-liked-songs` to create the `liked-songs.json` into the main directory.
+# Glitch Setup
+
+This section explains how to set up using Glitch.com
+
+## Creating Project
+1. Go to [Glitch](https://glitch.com). Login.
+2. Click **New Project** and select **Import from GitHub**
+3. Paste the repository URL `H4CK3RG0D/spotifyWeb` and import the project.
+
+Once the project is imported, run to install all dependencies:
+```sh
+npm install
+```
+## Configuring Environment Variables
+
+1. Click on `.env` in your Glitch project.
+2. Add the following environment variables:
+
+```sh
+CLIENT_ID=your_spotify_client_id
+CLIENT_SECRET=your_spotify_client_secret
+REDIRECT_URI=https://your-glitch-project.glitch.me/api/callback
+PROJECT_DOMAIN=your-glitch-project
+```
+## Updating Redirect URI in Spotify Developer Dashboard
+
+1. Go to Spotify Developer Dashboard.
+2. Select your app.
+3. Find Redirect URIs and add: `https://your-glitch-project.glitch.me/api/callback`
+4. Save the changes.
+
+### Testing the Application
+
+1. Open `https://your-glitch-project.glitch.me/api/login` in your browser.
+2. Login with your Spotify account.
+3. After authentication, you should be redirected to search.html.
+---
+
+
+# Create `liked-songs.json` file 
+1. Run `http://localhost:8181/api/save-liked-songs` (LOCAL) or `https://your-glitch-project.glitch.me/api/save-liked-songs` (GLITCH) to create the `liked-songs.json` into the main directory.
 
 # Configuration
 
