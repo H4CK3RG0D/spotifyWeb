@@ -7,12 +7,14 @@ The Spotify Web API allows developers to integrate Spotify’s powerful music da
 - Retrieve Music Data – Get details about songs, albums, artists, and genres.
 - User Authentication – Authenticate users via OAuth 2.0 to access personal Spotify data.
 - Control Playback – Play, pause, skip, and modify playback on a user’s active device.
-- Personalized Recommendations – Generate song recommendations based on listening history.
 - Manage Playlists – Create, edit, and delete playlists programmatically.
 - Track User Data – Access recently played tracks, top artists, and top tracks.
 
 ---
+
 # Installation and Set Up
+
+The following steps are intended for local hosting. If you plan to deploy the application on a server or cloud service, follow the [Glitch Setup](#glitch-setup).
 
 ## Node.js
 
@@ -20,7 +22,7 @@ Ensure you have [Node.js](https://nodejs.org/en) installed.
 
 Download or Clone the repository:
 
-```cmd
+```sh
 git clone https://github.com/H4CK3RG0D/spotifyWeb.git
 cd spotifyWeb
 ```
@@ -28,36 +30,54 @@ cd spotifyWeb
 ## Install dependencies:
 
 Installs all packages:
-```cmd
+```sh
 npm install
 ```
 
 Start the development server:
 
-```cmd
+```sh
 npm run start
 ```
+
+# Glitch Setup
+
+This section explains how to set up using Glitch.com
+
+## Creating Project
+1. Go to [Glitch](https://glitch.com). Login.
+2. Click **New Project** and select **Import from GitHub**
+3. Paste the repository URL `H4CK3RG0D/spotifyWeb` and import the project.
+
+Once the project is imported, run to install all dependencies:
+```sh
+npm install
+```
+
+---
 
 ## Adding Spotify Client Secret, Client ID and Redirect URI
 
 1. Go to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
 2. Log in and create a new application.
-3. Copy the Client ID and Client Secret from the application settings.
-4. Under **Redirect URIs**, add the following URI: `http://localhost:8181/api/callback`
+3. Make sure you check `Web API` under APIs used
+4. Copy the Client ID and Client Secret from the application settings.
+5. Under **Redirect URIs**, add the following URI: `http://localhost:8181/api/callback`
 
-6. Create a `.env` file in the root of your project and add the following:
+6. For local hosting, create a `.env` file in the root of your project and add the following:
 
-```
+```sh
 SPOTIFY_CLIENT_ID=your-client-id
 SPOTIFY_CLIENT_SECRET=your-client-secret
 REDIRECT_URI=http://localhost:8181/api/callback
 ```
+6.5. For Glitch, click on the `.env` and add each as a variable
 
 Save the file and restart your server if necessary.
 
 ### Create `liked-songs.json` file
 
-1. Run `http://localhost:8181/save-liked-songs` to create the `liked-songs.json` into the main directory
+1. Run `http://localhost:8181/api/save-liked-songs` to create the `liked-songs.json` into the main directory.
 
 # Configuration
 
@@ -68,6 +88,7 @@ To change the popularity range, update the filtering condition in the code snipp
 ```js
         const tracksByMonth = likedSongsArray
                 .filter(song => song.popularity > 55) // POPULARITY SCORE OVER 55
+                ...
 ```
 
 ## `/crp` Artist List
@@ -90,12 +111,10 @@ For example: **The Weeknd**: [`https://open.spotify.com/artist/`**`1Xyo4u8uXC1Zm
 You can customize the genre selection for randomly played songs by modifying the `genres` array. Simply update or extend the list to include your preferred genres. A full list of supported 1383 genres can be found [here](https://gist.githubusercontent.com/andytlr/4104c667a62d8145aa3a/raw/2d044152bcacf98d401b71df2cb67fade8e490c9/spotify-genres.md).
 
 ```js
-const genres = ['pop', 'rock', 'hip-hop', 'electronic', 'classical', 'jazz', 'mandopop', 'rap', 'metal', 'blues'];
+const genres = ['pop', 'rock', 'hip-hop', 'electronic', ...];
 ```
 
 ---
-
-
 
 # Endpoints
 
@@ -106,13 +125,12 @@ const genres = ['pop', 'rock', 'hip-hop', 'electronic', 'classical', 'jazz', 'ma
 5. `/play?uri={track-uri}`: Plays a song based on inputted song uri
 6. `/random-song`: Plays a random song
 
----
-
 # Future Ideas!!!
 
 - Add an algorithm to `/cmp` based on themes of a song
 - New endpoints: `/recommendations`, `/trending`
+- Custom Spotify Home UI with Albums (Powered by Spicicy)
 
 ---
 
-~{ Made with ❤️ by Bryan }~
+Made with ❤️ by Bryan

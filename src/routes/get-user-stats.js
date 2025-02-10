@@ -13,7 +13,7 @@ router.get('/get-user-stats', async (req, res) => {
         const topArtistsData = await spotifyApi.getMyTopArtists({ limit: 5 });
         const topArtists = topArtistsData.body.items.map(artist => ({
             name: artist.name,
-            image: artist.images[0]?.url,
+            image: artist.images[0].url,
             genres: artist.genres.join(', '),
         }));
 
