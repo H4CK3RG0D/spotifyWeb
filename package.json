@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "spotify-web-api",
   "version": "1.5.0",
-  "description": "express server",
+  "description": "Spotify Web API Project",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",

@@ -74,6 +74,15 @@ Once the project is imported, run to install all dependencies:
 ```sh
 npm install
 ```
+## Checking the correcg NodeJS version for Glitch
+To ensure this code works, Node.js v18 must be running. To check the glich's NodeJS version, run in the terminal:
+```sh
+node -v
+```
+
+If the node version is `v18.0.0+`, you will be set to run.
+
+
 ## Configuring Environment Variables
 
 1. Click on `.env` in your Glitch project.
