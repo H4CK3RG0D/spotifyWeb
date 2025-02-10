@@ -7,7 +7,7 @@
     "start": "nodemon src/index.js",
     "v1": "node src/dev/v1.js"
   },
-  "author": "me",
+  "author": "Bryannnnchennnnn",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.5",

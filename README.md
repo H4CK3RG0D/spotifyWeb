@@ -66,8 +66,8 @@ Save the file and restart your server if necessary.
 This section explains how to set up using Glitch.com
 
 ## Creating Project
-1. Go to [Replit](https://replit.com). Login.
-2. Click **New Project** and select **Import from GitHub**
+1. Go to [Replit](https://replit.com) Login.
+2. Click **Create App** and select **Import from GitHub**
 3. Paste the repository URL `H4CK3RG0D/spotifyWeb` and import the project.
 
 Once the project is imported, run to install all dependencies:
@@ -118,7 +118,7 @@ To change the popularity range, update the filtering condition in the code snipp
                 ...
 ```
 
-## `/crp` Artist List
+## `/crp` Artist List, Album Name/Description
 
 To change the artist list, simply add an artist's ID inside the `artistIds` array, which can be obtained by copying the artist's link through spotify url.
 
@@ -132,6 +132,16 @@ const artistIds = [
 ```
 
 For example: **The Weeknd**: [`https://open.spotify.com/artist/`**`1Xyo4u8uXC1ZmMpatF05PJ`**](https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ)
+
+To change the Album Name and Description, modify the following:
+```js
+const playlist = await spotifyApi.createPlaylist('ALBUMN NAME', {
+                description: "ALBUM DESCRIPTION",
+                public: true, // Public Settings
+            });
+```
+
+
 
 ## `/random-songs` Genre
 

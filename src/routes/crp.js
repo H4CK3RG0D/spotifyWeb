@@ -36,9 +36,9 @@ router.get('/crp', async (req, res) => {
             topSongs = [...new Set(topSongs)].sort(() => Math.random() - 0.5);
     
             // Create a playlist for top songs from favorite artists
-            const playlist = await spotifyApi.createPlaylist('Westside Cyphers', {
-                description: "She wanna taste it, checkin' the swag today, ho, come back tomorrow",
-                public: false,
+            const playlist = await spotifyApi.createPlaylist('ALBUMN NAME', {
+                description: "ALBUM DESCRIPTION",
+                public: true, // Public Settings
             });
     
             console.log(`Playlist "${playlist.body.name}" created successfully.`);
